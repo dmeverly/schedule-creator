@@ -8,6 +8,7 @@ import math
 INPUT = "Template.xlsx"
 OUTPUT = "Schedule.xlsx"
 DOW = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+numMonths = 12
 
 def readXlsx():
     workbook = openpyxl.load_workbook(INPUT)
@@ -150,14 +151,9 @@ def queryInput(string, type):
 if __name__ == "__main__":
     d1, d2, n = preProcess(readXlsx())
 
-    #weekNumber = queryInput("Template Week Number: ", "week")
-    #monthStart = queryInput("Starting Month Number: ", "month")
-    #year = queryInput("Starting Year: ", "year")
-
-    weekNumber = 4
-    monthStart = 3
-    year = 2025
-    numMonths = 12
+    weekNumber = queryInput("Template Week Number: ", "week")
+    monthStart = queryInput("Starting Month Number: ", "month")
+    year = queryInput("Starting Year: ", "year")
 
     Styles = {
         'month': Font(name="Arial", size=14, bold=True),
